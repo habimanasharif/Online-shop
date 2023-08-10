@@ -1,0 +1,16 @@
+{
+    "name": "sharifhabiman/online-shop",
+    "description": "Online shop",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Sharifhabiman\\OnlineShop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "sharif"
+        }
+    ],
+    "require": {}
+}
