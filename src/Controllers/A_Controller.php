@@ -30,10 +30,9 @@ protected array $dataToRender = [];
         if (method_exists($this, $name)) {
             //Input data validation
             $this->validateInputs();
-
             $this->view->setActionNameForViews(str_replace('Action', '', $name));
             $classNameSpaceWithName = get_class($this);
-            $className = str_replace('OnlineStoreProject\Controllers\\', '', $classNameSpaceWithName);
+            $className = str_replace('OnlineShop\Controllers\\', '', $classNameSpaceWithName);
             $this->view->setClassNameForViews(str_replace('Controller', '', $className));
             return call_user_func_array(array($this, $name), $args);
         }

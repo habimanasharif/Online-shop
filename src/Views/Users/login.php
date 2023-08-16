@@ -34,21 +34,20 @@
 
 $var = true;
 if($var) {
-    echo "Variable";
 } else {
     echo "Fail";
 }
 
-echo $var ? "Variable" : "Fail";
+echo $var ? "" : "Fail";
 
 $arr = ['id' => 1];
 
 if(isset($arr['id'])){
-    echo $arr['id'];
+    // echo $arr['id'];
 } else {
     echo "Failed";
 }
 
-echo $arr['id'] ?? "Failed";
+echo  "" ?? "Failed";
 
 ?>

@@ -6,6 +6,7 @@ class MainController extends A_Controller
 {
     protected function indexAction(): void
     {
+        
         $users = new Users();
         $this->dataToRender['users'] = $users->findAll();
         echo $this->view->render('index', $this->dataToRender);

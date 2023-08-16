@@ -1,6 +1,7 @@
 <?php
 
 namespace OnlineShop\App;
+use OnlineShop\Controllers\MainController;
 
 class Router
 {
@@ -33,7 +34,6 @@ class Router
     {
         $method = strtolower($_SERVER['REQUEST_METHOD']);
         $route = strtolower($_SERVER['REQUEST_URI']);
-
         $indexName = md5($method . $route);
         if(array_key_exists($indexName, self::$routes)){
             $classNameSpace = self::$routes[$indexName][self::CLASS_NAME];

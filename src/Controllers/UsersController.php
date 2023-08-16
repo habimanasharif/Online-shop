@@ -2,7 +2,7 @@
 
 namespace OnlineShop\Controllers;
 use OnlineShop\Entities\Users;
-class UsersController
+class UsersController extends A_Controller
 {
     protected function indexAction(): void
     {
@@ -39,6 +39,7 @@ class UsersController
             $userData[Users::DB_TABLE_FIELD_PASSWORD] = htmlentities($_POST[Users::DB_TABLE_FIELD_PASSWORD]);
             $userData[Users::DB_TABLE_FIELD_ADDRESS] = htmlentities($_POST[Users::DB_TABLE_FIELD_ADDRESS]);
             $userData[Users::DB_TABLE_FIELD_PASSWORD] = password_hash($userData[Users::DB_TABLE_FIELD_PASSWORD], PASSWORD_DEFAULT);
+            print_r($userData);
             $users = new Users();
             $result = $users->insert($userData);
             if($result === true){
@@ -71,7 +72,6 @@ class UsersController
     {
         $userExists = false;
         $userData = [];
-
         $_SESSION['userLoginFailed'] = false;
         if ($userEmail = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $user = new Users();

@@ -9,7 +9,6 @@ $mainControllerNameSpace = 'OnlineShop\\Controllers\\MainController';
 $cartControllerNameSpace = 'OnlineShop\\Controllers\\CartController';
 $productsControllerNameSpace = 'OnlineShop\\Controllers\\ProductsController';
 $usersControllerNameSpace = 'OnlineShop\\Controllers\\UsersController';
- echo "hello";
 Router::add('/', 'get', $mainControllerNameSpace, 'index');
 Router::add('/login', 'get', $usersControllerNameSpace, 'login');
 Router::add('/login', 'post', $usersControllerNameSpace, 'authenticate');
